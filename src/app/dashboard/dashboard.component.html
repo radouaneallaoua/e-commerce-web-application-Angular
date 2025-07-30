@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row gap-3">
+    <div class="col-md p-3 mb-3  rounded-4" style="background-color: rgba(39, 134, 102, 0.207);">
+      4 commandes ce mois Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, nesciunt!
+    </div>
+    <div class="col-md mb-3 p-3 rounded-4 " style="background-color: rgba(0, 0, 0, 0.625);">
+       <span class="fw-bold fs-3 text-light">500000 dollars Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolores soluta nobis veritatis nemo! Rerum!</span>
+    </div>
+    <div class="col-md mb-3 p-3 rounded-4 " style="background-color: rgba(8, 125, 234, 0.538);">
+      <span class="fw-bold fs-3 text-light">+100 utilisateurs Lorem ipsum dolor sit amet. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, aperiam.</span>
+   </div>
+  </div>
+  <div class="row">
+    <div class="col-md  bg-white  rounded-4">
+      <ngx-charts-bar-vertical-2d [view]="[700,400]" [results]="multi" [gradient]="gradient" [xAxis]="showXAxis"
+        [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [legendTitle]="legendTitle" (select)="onSelect($event)"
+        (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
+      </ngx-charts-bar-vertical-2d>
+    </div>
+    <div class="col-md">
+      <ngx-charts-gauge [view]="[400, 400]" [results]="single2" [legend]="legend2" [legendPosition]="legendPosition2"
+        (select)="onSelect($event)" (activate)="onActivate2($event)" (deactivate)="onDeactivate2($event)">
+      </ngx-charts-gauge>
+    </div>
+  </div>
+</div>

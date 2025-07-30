@@ -1,0 +1,8 @@
+<!-- <mat-list-item   routerLink="{{path}}" [activated]="indice===selectedService.selecteIndex" (click)="handleClick()" >
+    <mat-icon >{{iconName}}</mat-icon>
+    <span class="mt-0 align-self-center">{{" "+name}}</span> 
+</mat-list-item> -->
+<div class="rounded-3 p-2 hover" routerLink="{{path}}" style="cursor: pointer;"  [ngClass]="indice===selectedService.selecteIndex?'text-bg-dark':''" (click)="handleClick()" >
+    <mat-icon class="mt-1">{{iconName}}</mat-icon>
+    <span>{{" "+name}}</span>
+</div>

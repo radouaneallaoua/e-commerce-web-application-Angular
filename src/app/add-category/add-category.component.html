@@ -1,0 +1,35 @@
+<div class="container p-3">
+    <div class="row">
+        <div class="col-md fw-bold fs-4 mb-5">
+                Ajouter nouvelle categorie
+        </div>
+    </div>
+    <form [formGroup]="addCategory" (ngSubmit)="handleSubmit()">
+        <div class="row">
+            <div class="col-md mt-3">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Label</mat-label>
+                    <input formControlName="label" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md mt-3">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <input formControlName="description" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md">
+                <input type="file" formControlName="imageURL" id="file" hidden>
+                <button type="button" mat-flat-button (click)="openFile()" [ngClass]="addCategory.status==='VALID'?'bg-success':'bg-danger'">{{addCategory.status==="VALID"?addCategory.value.imageURL:"choisir une image"}}</button>
+            </div>
+
+        </div>
+        <div class="row  mt-3">
+            <div class="col-3">
+                <button class="w-100" mat-raised-button type="submit">+ ajouter</button>
+            </div>
+        </div>
+    </form>
+</div>

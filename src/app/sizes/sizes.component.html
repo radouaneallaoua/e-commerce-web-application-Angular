@@ -1,0 +1,20 @@
+<div class="container">
+    <form [formGroup]="addSizeForm" (ngSubmit)="handleSubmit()">
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>label</mat-label>
+                    <input matInput formControlName="sizeLabel">
+                </mat-form-field>
+            </div>
+            <div class="col-md-2 mt-4">
+                <button mat-flat-button type="submit">Ajouter taille</button>
+            </div>
+        </div>
+    </form>
+
+    @for (size of sizes; track $index) {
+    <app-size [size]="size"></app-size>
+    }
+
+</div>

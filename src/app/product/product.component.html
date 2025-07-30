@@ -1,0 +1,44 @@
+<div class="row p-3 mt-2" (mouseover)="handleMouseOver()" (mouseleave)="handleMouseLeave()"
+    [ngClass]="isHovered?'hover rounded-4 ':''" (click)="handleProductDetails()">
+    <div class="row mb-3">
+        <div class="col-md-2">
+            <img src="https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-3foodgroups_fruits_detailfeature.jpg?sfvrsn=64942d53_4"
+                width="100%" height="100px" class="rounded-4" />
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-2">{{productModel.name}}</div>
+                <div class="col-md-2 fw-bold">{{productModel.price}} DH</div>
+                <div class="col-md-2">{{productModel.brand.name}}</div>
+                <div class="col-md-2">
+                    @for(size of productModel.productSizeList;track size.id){
+                    <span>{{size.sizeLabel+" "}}</span>
+                    }
+                </div>
+                <div class="col-md-2">
+                    @for(color of productModel.productColorList;track color.id){
+                    <span>{{color.color+" "}}</span>
+                    }
+                </div>
+                <div class="col-md-2">
+                    <span [ngClass]="productModel.stock>0?' bg-success rounded-pill p-2':' bg-danger rounded-pill p-2'">
+                        {{productModel.stock>0?"En stock":"En repture"}}
+                    </span>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md d-flex justify-content-end">
+                    <button mat-icon-button>
+                        <mat-icon color="error">delete</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon color="error">edit</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <mat-divider></mat-divider>
+
+</div>

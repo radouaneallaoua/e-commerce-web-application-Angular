@@ -1,0 +1,31 @@
+<mat-accordion class="example-headers-align ">
+  <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+    <mat-expansion-panel-header>
+      <mat-panel-title> Order #12341 </mat-panel-title>
+      <mat-panel-description>
+        client {{order.userId}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>
+      order infos
+    </p>
+    <div class="row">
+      <div class="col-md-3">Produit</div>
+      <div class="col-md-3">Qantite</div>
+      <div class="col-md-3">Prix unitaire (DH)</div>
+      <div class="col-md-3">Somme (DH)</div>
+    </div>
+    @if (
+    order.orderProducts
+    ) {
+    @for (item of order.orderProducts; track item.orderId) {
+    <div class="row">
+      <div class="col-md-3"><img [src]="productService.getProductById(item.productId)?.productImageList" alt=""></div>
+      <div class="col-md-3">{{item.quantity}}</div>
+      <div class="col-md-3">{{productService.getProductById(item.productId)!.price }}</div>
+      <div class="col-md-3">{{productService.getProductById(item.productId)!.price * item.quantity}}</div>
+    </div>
+    }
+    }
+  </mat-expansion-panel>
+</mat-accordion>
