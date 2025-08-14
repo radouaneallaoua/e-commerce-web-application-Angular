@@ -1,26 +1,27 @@
 <mat-toolbar color="" style="background-color: #ffffff;">
-    <button mat-icon-button (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <div class="spacer"></div>
-    <button mat-button>test</button>
-    <button mat-icon-button>
-        <mat-icon>account_circle</mat-icon>
-    </button>
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="spacer"></div>
+  <button mat-button>admin</button>
+  <button mat-icon-button>
+    <mat-icon>account_circle</mat-icon>
+  </button>
 </mat-toolbar>
-<mat-drawer-container class="min-vh-100" >
-    <mat-drawer style="width: 250px; background-color: white;"  #drawer mode="side" position="start" opened="true" >
-        <mat-nav-list class="ps-2">
-            @for(item of drawerItems;track item.name){
-            <app-drawer-item [indice]="item.indice" [name]="item.name" [iconName]="item.iconName" [path]="item.path"></app-drawer-item>
-            }
-        </mat-nav-list>
-    </mat-drawer>
-    <mat-drawer-content>
-        <div  class="bg-white h-100 ms-2">
-            <div style="background-color: #aeb0b828;padding: 10px;overflow-x: scroll; " class="rounded-start-5 ">
-                <router-outlet></router-outlet>
-            </div>
-        </div>
-    </mat-drawer-content>
+<mat-drawer-container class="min-vh-100">
+  <mat-drawer style="width: 250px; background-color: white;" #drawer mode="side" position="start" opened="true">
+    <mat-nav-list class="ps-2">
+      @for (item of drawerItems; track item.name) {
+          <app-drawer-item [indice]="item.indice" [name]="item.name" [iconName]="item.iconName"
+                           [path]="item.path"></app-drawer-item>
+      }
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="bg-white min-vh-100  ms-2">
+      <div style="background-color: #aeb0b828;padding: 10px; " class="rounded-start-5 ">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mat-drawer-content>
 </mat-drawer-container>

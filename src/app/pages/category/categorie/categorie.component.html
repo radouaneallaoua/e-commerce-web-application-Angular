@@ -1,0 +1,24 @@
+<div class="col-md-12 mt-3" style="cursor: pointer;max-height: min-content;" >
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>{{ category.name }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image
+         *ngIf="image"
+         [src]="image"
+         [alt]="category.imageURL"
+         class="rounded-4"
+         width="auto"
+         height="200px"
+         style="padding: 10px;">
+    <mat-card-content>
+      <p style="font-size: 12px;" class="text-secondary">
+        {{ category.description }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions [align]="'end'">
+      <button mat-button style="color: red;" (click)="deleteCategory(category.id)">supprimer</button>
+      <button mat-button (click)="navigateToUpdateCategory(category.id)">modifier</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

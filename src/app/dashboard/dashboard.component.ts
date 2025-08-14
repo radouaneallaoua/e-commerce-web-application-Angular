@@ -1,52 +1,80 @@
 import { Component } from '@angular/core';
 import { LegendPosition, NgxChartsModule } from '@swimlane/ngx-charts';
+import {NgOptimizedImage} from '@angular/common';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [NgxChartsModule],
+  imports: [NgxChartsModule, NgOptimizedImage],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
   multi: any[]=[
     {
-      "name": "Germany",
+      "name": "Produit 1",
       "series": [
         {
-          "name": "2010",
-          "value": 7300000
+          "name": "8",
+          "value": 100
         },
         {
-          "name": "2011",
-          "value": 8940000
+          "name": "9",
+          "value": 200
         }
       ]
     },
-  
+
     {
-      "name": "USA",
+      "name": "Produit 2",
       "series": [
         {
-          "name": "2010",
-          "value": 7870000
+          "name": "8",
+          "value": 70
         },
         {
-          "name": "2011",
-          "value": 8270000
+          "name": "9",
+          "value": 80
         }
       ]
     },
-  
+
     {
-      "name": "France",
+      "name": "Produit 3",
       "series": [
         {
-          "name": "2010",
-          "value": 5000002
+          "name": "8",
+          "value": 30
         },
         {
-          "name": "2011",
-          "value": 5800000
+          "name": "9",
+          "value": 40
+        }
+      ]
+    },
+    {
+      "name": "Produit 4",
+      "series": [
+        {
+          "name": "8",
+          "value": 8
+        },
+        {
+          "name": "9",
+          "value": 25
+        }
+      ]
+    }
+    ,
+    {
+      "name": "Produit 5",
+      "series": [
+        {
+          "name": "8",
+          "value": 7
+        },
+        {
+          "name": "9",
+          "value": 15
         }
       ]
     }
@@ -77,11 +105,11 @@ export class DashboardComponent {
       "value": 4300000
     }
   ];
-  
+
   view = [700, 400];
 
   // options
-  
+
   view2: any[] = [500, 400];
   legend2: boolean = true;
   legendPosition2: LegendPosition = LegendPosition.Below;
@@ -94,10 +122,10 @@ export class DashboardComponent {
   gradient: boolean = true;
   showLegend: boolean = true;
   showXAxisLabel: boolean = true;
-  xAxisLabel: string = 'Country';
+  xAxisLabel: string = 'Produits';
   showYAxisLabel: boolean = true;
-  yAxisLabel: string = 'Population';
-  legendTitle: string = 'Years';
+  yAxisLabel: string = 'Ventes';
+  legendTitle: string = 'Mois';
 
   colorScheme = {
     domain: ['#5AA454', '#C7B42C', '#AAAAAA']
@@ -131,4 +159,5 @@ export class DashboardComponent {
   }
 
 
+  protected readonly Number = Number;
 }

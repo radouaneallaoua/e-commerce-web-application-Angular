@@ -1,0 +1,16 @@
+<div class="col-md  rounded-4 mt-3  p-3 bg-white">
+    <div class="col-md d-flex justify-content-between">
+        <span class="fw-bold align-content-center text-secondary">
+            {{brand.name}}
+        </span>
+        <span>
+            <button mat-icon-button (click)="handleDeleteItem(brand.id)" style="color: red">
+                <mat-icon color="error">delete</mat-icon>
+            </button>
+            <button mat-icon-button style="color: green" >
+                <mat-icon >edit</mat-icon>
+            </button>
+        </span>
+    </div>
+
+</div>

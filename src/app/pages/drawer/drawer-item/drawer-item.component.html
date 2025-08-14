@@ -1,0 +1,5 @@
+
+<div class="rounded-3 p-3 hover" routerLink="{{path}}" style="cursor: pointer;" [ngClass]="router.url.includes(path)?'text-bg-dark':''"  >
+    <mat-icon class="mt-1 ">{{iconName}}</mat-icon>
+    <span class="">{{" "+name}}</span>
+</div>

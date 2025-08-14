@@ -1,0 +1,26 @@
+<div class="container">
+  <form [formGroup]="addBrandForm" (ngSubmit)="handleSubmit()">
+    <div class="row">
+      <div class="col-md-6 mt-3">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Nom de la marque</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4 mt-3">
+        <button mat-flat-button type="submit">+ Ajouter marque</button>
+      </div>
+    </div>
+  </form>
+  @if (isLoading) {
+    <mat-spinner></mat-spinner>
+
+  } @else {
+    <div class="row">
+      @for (brand of brands; track $index) {
+        <app-brand (itemDeleted)="deleteBrandWithIdAndUpdateTheUI($event)" [brand]="brand"></app-brand>
+      }
+    </div>
+  }
+
+</div>

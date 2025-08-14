@@ -1,0 +1,50 @@
+<div class="container p-3">
+  <div class="row">
+    <div class="col-md fw-bold fs-4 mb-5">
+      Modifier categorie
+    </div>
+  </div>
+  <form [formGroup]="addCategory" (ngSubmit)="handleSubmit()">
+    <div class="row">
+      <div class="col-md mt-3">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Label</mat-label>
+          <input formControlName="label" matInput>
+        </mat-form-field>
+      </div>
+      <div class="col-md mt-3">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Description</mat-label>
+          <input formControlName="description" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    @if (categories) {
+      <div class="row mt-2">
+        <mat-form-field>
+          <mat-label>Catégorie mere</mat-label>
+          <mat-select formControlName="parentCategoryId">
+            <mat-option [value]="null">Selectionner une categorie</mat-option>
+            @for (c of categories; track c.id) {
+              <mat-option [value]="c.id">{{ c.name }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+    }
+    <div class="row mt-3">
+      <div class="col-12">
+        <input type="file" (change)="onFileSelected($event)" id="file" hidden>
+        <button type="button" mat-flat-button (click)="openFile()" class="w-100"
+                [ngClass]="(addCategory.valid && selectedFile!=null)?'bg-success':'bg-danger'">{{ selectedFile ? selectedFile.name : "choisir une image" }}
+        </button>
+      </div>
+
+    </div>
+    <div class="row  mt-3">
+      <div class="col-12">
+        <button class="w-100" mat-flat-button type="submit">sauvegarder</button>
+      </div>
+    </div>
+  </form>
+</div>

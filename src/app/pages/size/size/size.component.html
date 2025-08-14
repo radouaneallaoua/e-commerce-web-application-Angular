@@ -1,0 +1,16 @@
+<div class="col-md rounded-4 mt-3  p-3 bg-white">
+  <div class="col-md d-flex justify-content-between">
+        <span class="fw-bold align-content-center text-secondary">
+            {{ size.label }}
+        </span>
+    <span>
+            <button mat-icon-button (click)="deleteSize(size.id)" style="color: red">
+                <mat-icon color="error">delete</mat-icon>
+            </button>
+            <button mat-icon-button style="color: green">
+                <mat-icon color="error">edit</mat-icon>
+            </button>
+        </span>
+  </div>
+
+</div>
